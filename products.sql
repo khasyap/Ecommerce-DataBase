@@ -13,3 +13,11 @@ VALUES
 ('Organic Apples', 'Fresh, organic apples from local farms', 3.99, 500, 8),
 ('Car Tires', 'Set of 4 high-performance car tires', 249.99, 30, 9),
 ('Vitamins', 'Multivitamin supplements for daily health support', 29.99, 150, 10);
+
+
+--joints
+select ecommerce.products.product_id, ecommerce.products.name,ecommerce.categories.name from ecommerce.products inner join ecommerce.categories on ecommerce.products.category_id=ecommerce.categories.category_id;
+select ecommerce.products.product_id, ecommerce.products.name,ecommerce.products.stock_quality,ecommerce.categories.name from ecommerce.products left join ecommerce.categories on ecommerce.products.category_id=ecommerce.categories.category_id;
+select * from ecommerce.products left join ecommerce.categories on ecommerce.products.category_id=ecommerce.categories.category_id;
+select * from ecommerce.products  join ecommerce.categories on ecommerce.products.category_id=ecommerce.categories.category_id where ecommerce.categories.name like '%Electronic%';
+select * from ecommerce.products right join ecommerce.categories on ecommerce.products.category_id=ecommerce.categories.category_id where ecommerce.products.price >=100 && ecommerce.products.name like 's%';
